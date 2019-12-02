@@ -1,2 +1,2 @@
 # TwoCollectionviewConnectedToEachOther
-This project explain how to connect two collectionView with eachothers 
+This project explains how to connect two collectionView with eachothers 
