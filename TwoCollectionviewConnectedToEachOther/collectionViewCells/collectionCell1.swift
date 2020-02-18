@@ -8,17 +8,13 @@
 
 import UIKit
 
-class collectionCell1: UICollectionViewCell ,  UIGestureRecognizerDelegate ,  UIScrollViewDelegate {
+class CollectionCell1: UICollectionViewCell ,  UIGestureRecognizerDelegate ,  UIScrollViewDelegate {
     
     @IBOutlet weak var bigImage: UIImageView!
     @IBOutlet weak var scroll: UIScrollView!
     
-   
-    
-    
     func setUp () {
-        let tapGesture = UITapGestureRecognizer(target: self,
-                                                         action: #selector(handleTap(gesture:)))
+        let tapGesture = UITapGestureRecognizer(target: self,action: #selector(handleTap(gesture:)))
          tapGesture.delegate = self
          scroll.minimumZoomScale = 1.0
          scroll.maximumZoomScale = 5.0
@@ -29,7 +25,8 @@ class collectionCell1: UICollectionViewCell ,  UIGestureRecognizerDelegate ,  UI
         
     }
     
-    @objc func handleTap(gesture:UITapGestureRecognizer) {
+       @objc func handleTap(gesture:UITapGestureRecognizer)
+       {
                     if (self.scroll.zoomScale < self.scroll.maximumZoomScale) {
                             let newScale = self.scroll.zoomScale * 3
         let zoomRect = self.zoomRectForScale(scale: newScale, center: gesture.location(in: gesture.view))
@@ -41,7 +38,8 @@ class collectionCell1: UICollectionViewCell ,  UIGestureRecognizerDelegate ,  UI
     
     
     
-          func zoomRectForScale(scale:CGFloat, center: CGPoint) -> CGRect{
+          func zoomRectForScale(scale:CGFloat, center: CGPoint) -> CGRect
+          {
                let size = CGSize(
                    width: self.scroll.frame.size.width / scale,
                    height: self.scroll.frame.size.height / scale
@@ -54,7 +52,4 @@ class collectionCell1: UICollectionViewCell ,  UIGestureRecognizerDelegate ,  UI
                    size: size
                )
            }
-   
-    
-    
 }

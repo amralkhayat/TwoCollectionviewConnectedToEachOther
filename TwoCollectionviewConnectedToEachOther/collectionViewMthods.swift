@@ -28,7 +28,7 @@ func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:
     private func cellItem (collectionView: UICollectionView , with indexPath:IndexPath ) -> UICollectionViewCell {
         switch collectionView {
              case collectionView1 :
-                 let cellA = collectionView1.dequeueReusableCell(withReuseIdentifier: collectionViewAIdentifier, for: indexPath) as! collectionCell1
+                 let cellA = collectionView1.dequeueReusableCell(withReuseIdentifier: collectionViewAIdentifier, for: indexPath) as! CollectionCell1
                  cellA.setUp ()
                  cellA.bigImage.image = imagesArray[indexPath.row]
                  return cellA
