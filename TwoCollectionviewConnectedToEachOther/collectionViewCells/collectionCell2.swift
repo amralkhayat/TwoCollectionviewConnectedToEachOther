@@ -8,8 +8,6 @@
 
 import UIKit
 
-class collectionCell2: UICollectionViewCell {
-    
+class CollectionCell2: UICollectionViewCell {
     @IBOutlet weak var smallImage: UIImageView!
-    
 }

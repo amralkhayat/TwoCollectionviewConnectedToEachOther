@@ -14,9 +14,10 @@ extension ViewController : UICollectionViewDataSource, UICollectionViewDelegate 
         imagesArray.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        cellForItem(collectionView: collectionView, with: indexPath)
+func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        cellItem(collectionView: collectionView, with: indexPath)
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
@@ -24,14 +25,15 @@ extension ViewController : UICollectionViewDataSource, UICollectionViewDelegate 
     }
     
 
-    private func cellForItem (collectionView: UICollectionView , with indexPath:IndexPath ) -> UICollectionViewCell {
+    private func cellItem (collectionView: UICollectionView , with indexPath:IndexPath ) -> UICollectionViewCell {
         switch collectionView {
              case collectionView1 :
                  let cellA = collectionView1.dequeueReusableCell(withReuseIdentifier: collectionViewAIdentifier, for: indexPath) as! collectionCell1
+                 cellA.setUp ()
                  cellA.bigImage.image = imagesArray[indexPath.row]
                  return cellA
              case collectionView2 :
-                 let cellB = collectionView2.dequeueReusableCell(withReuseIdentifier: collectionViewBIdentifier, for: indexPath) as! collectionCell2
+                 let cellB = collectionView2.dequeueReusableCell(withReuseIdentifier: collectionViewBIdentifier, for: indexPath) as! CollectionCell2
                 cellB.smallImage.image = imagesArray[indexPath.row]
                      return cellB
              default:
